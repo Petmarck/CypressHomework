@@ -1,0 +1,11 @@
+{
+    "Register" : {
+        "firstName" : "#first-name",
+        "lastName" : "#last-name",
+        "email": "#email",
+        "password" : "#password",
+        "passwordConfirm" : "#password-confirmation",
+        "termsBtn" : ".form-check-input",
+        "submitBtn" : ".btn"
+    }
+}

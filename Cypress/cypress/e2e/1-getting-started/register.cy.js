@@ -1,22 +1,32 @@
+const Locators = require("../../fixtures/Locators.json")
+const { faker } = require("@faker-js/faker")
+const password = '123' + faker.internet.password()
+
 describe ('Register testing', () => {
+    beforeEach(() => {
+        cy.visit('/')
+        cy.get('.nav-link').eq(2).click()
+    })
     it('Visit Gallery', () => {
-        cy.visit('https://gallery-app.vivifyideas.com/')
+        // cy.visit('/')
     })
 
     it('Go to Register', () => {
-        cy.visit('https://gallery-app.vivifyideas.com/')
-        cy.get('.nav-link').eq(2).click()
+        // cy.visit('/')
+        // cy.get('.nav-link').eq(2).click()
     })
 
     it('Register', () => {
-        cy.visit('https://gallery-app.vivifyideas.com/')
-        cy.get('.nav-link').eq(2).click()
-        cy.get('#first-name').type('Petar')
-        cy.get('#last-name').type('Markovic')
-        cy.get('#email').type('test@homework1.com')
-        cy.get('#password').type('12345678')
-        cy.get('#password-confirmation').type('12345678')
-        cy.get('.form-check-input').click()
-        cy.get('.btn').click()
+        cy.get(Locators.Register.firstName).type(faker.name.firstName())
+        cy.get(Locators.Register.lastName).type(faker.name.lastName())
+        cy.get(Locators.Register.email).type(faker.internet.email())
+        cy.get(Locators.Register.password).type(password)
+        cy.get(Locators.Register.passwordConfirm).type(password)
+        cy.get(Locators.Register.termsBtn).click()
+        cy.get(Locators.Register.submitBtn).click()
+    })
+
+    afterEach(() => {
+        cy.clearCookies()
     })
 })
