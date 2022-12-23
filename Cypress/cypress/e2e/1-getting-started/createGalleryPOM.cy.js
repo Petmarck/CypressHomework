@@ -39,7 +39,9 @@ describe ('Create Gallery', () => {
         createGallery.titleInput.should('have.css', 'border-radius', '20px')
         .and('have.css','background-color', 'rgb(255, 255, 255)')
         .and('be.visible')
-        cy.wait(5000)
+        
+
+
         
         
     })

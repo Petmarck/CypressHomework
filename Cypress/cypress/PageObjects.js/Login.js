@@ -12,7 +12,7 @@ class Login {
         return cy.get('.btn.btn-custom')
     }
 
-    login () {
+    login (email, password) {
         this.emailInputLog.type(email)
         this.passwordInputLog.type(password)
         this.submitBtnLog.click()

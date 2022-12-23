@@ -20,7 +20,7 @@ class CreateGallery {
         return cy.get('form > :nth-child(5)')
     }
 
-    CreateGalleryImput () {
+    CreateGalleryInput (title, description, url) {
         this.titleInput.type(title)
         this.descriptionInput.type(description)
         this.imageUrl.type(url)
